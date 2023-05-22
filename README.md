@@ -28,17 +28,17 @@ The data fields are the same among all splits.
   - options: a list of string features.
 
 - Example Data
-```
-This example was too long and was cropped:
+  ```
+  This example was too long and was cropped:
 
-{
-    "answer": "A",
-    "article": "\"Schoolgirls have been wearing such short skirts at Paget High School in Branston that they've been ordered to wear trousers ins...",
-    "example_id": "high132.txt",
-    "options": ["short skirts give people the impression of sexualisation", "short skirts are too expensive for parents to afford", "the headmaster doesn't like girls wearing short skirts", "the girls wearing short skirts will be at the risk of being laughed at"],
-    "question": "The girls at Paget High School are not allowed to wear skirts in that    _  ."
-}
-```
+  {
+      "answer": "A",
+      "article": "\"Schoolgirls have been wearing such short skirts at Paget High School in Branston that they've been ordered to wear trousers ins...",
+      "example_id": "high132.txt",
+      "options": ["short skirts give people the impression of sexualisation", "short skirts are too expensive for parents to afford", "the headmaster doesn't like girls wearing short skirts", "the girls wearing short skirts will be at the risk of being laughed at"],
+      "question": "The girls at Paget High School are not allowed to wear skirts in that    _  ."
+  }
+  ```
 
 ### Sources
 - [Dataset Link](https://www.cs.cmu.edu/~glai1/data/race/)
