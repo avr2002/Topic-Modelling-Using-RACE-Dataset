@@ -1,0 +1,13 @@
+bokeh
+contractions
+gensim
+matplotlib
+nltk
+numpy
+pandas
+pyLDAvis
+scikit_learn
+seaborn
+textblob
+tqdm
+wordcloud
