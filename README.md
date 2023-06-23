@@ -13,9 +13,9 @@ Thanks to Topic Modeling where instead of manually going through numerous docume
 - A sentence or a document is made up of numerous topics and each topic is made up of numerous words.
 
 
-## Tech Stack
-$\rightarrow$ **Language:** Python
-$\rightarrow$ **Libraries:** `nltk`, `tqdm`, `numpy`, `joblib`, `pandas`, `scikit_learn`, `gensim`, `bokeh`, `t-SNE`, `pyLDAvis`
+### Tech Stack
+- $\rightarrow$ **Language:** Python
+- $\rightarrow$ **Libraries:** `nltk`, `tqdm`, `numpy`, `joblib`, `pandas`, `scikit_learn`, `gensim`, `bokeh`, `t-SNE`, `pyLDAvis`
 <!-- ➔ Services: Flask, Docker, AWS, Gunicorn -->
 
 
