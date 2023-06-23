@@ -7,8 +7,8 @@ __pycache__/
 *.so
 
 # Raw Data
-input/raw_data/RACE/
-input/tgz_data/RACE.tar.gz
+# input/raw_data/RACE/
+# input/tgz_data/RACE.tar.gz
 
 # Distribution / packaging
 .Python
