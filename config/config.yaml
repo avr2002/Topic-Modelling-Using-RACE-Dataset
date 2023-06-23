@@ -1,0 +1,61 @@
+data_config:
+  dataset_download_url: http://www.cs.cmu.edu/~glai1/data/race/RACE.tar.gz
+  tgz_download_dir: ./input/tgz_data
+  raw_data_dir: ./input/raw_data
+  ingested_data: ./input/ingested_data
+  csv_text_file_name: documents.csv
+  cleaned_test_data_name: cleaned_test_documents.csv
+  cleaned_train_data_name: cleaned_train_documents.csv
+
+  
+
+data_transformation_config:
+  tfidf_vect_params:
+    min_df: 3
+    max_df: 0.85
+    max_features: 4000
+    ngram_range: [1,2]
+    # preprocessor: "\" \".join"
+  count_vect_params:
+    analyzer: word
+    min_df: 10 
+    stop_words: english
+    lowercase: True
+
+
+lsa_params:
+  n_components: 10 
+  algorithm: randomized
+  n_iter: 10 
+  random_state: 42
+
+
+lda_params:
+  n_components: 10 # Num of topics
+  max_iter: 10 # Max learning iterations
+  learning_decay: 0.7
+  learning_method: online
+  batch_size: 128
+  evaluate_every: -1 # See doc, How often to evaluate perplexity
+  random_state: 42
+  n_jobs: -1
+
+nmf_params:
+  n_components: 22
+  init: nndsvd
+  random_state: 42
+
+
+model_save_path: ./output/saved_models
+model_output_save_path: ./output/model_outputs
+
+model_names:
+  lsa: lsa_model.pkl
+  lda: lda_model.pkl
+  best_lda: best_lda_model.pkl
+  nmf: nmf_model.pkl
+
+model_output_folder_names:
+  lsa: lsa_outputs
+  lda: lda_outputs
+  nmf: nmf_outputs

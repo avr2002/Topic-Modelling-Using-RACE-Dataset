@@ -11,3 +11,4 @@ seaborn
 textblob
 tqdm
 wordcloud
+ipykernel
