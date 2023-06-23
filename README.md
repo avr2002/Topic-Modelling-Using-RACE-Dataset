@@ -12,7 +12,12 @@ Thanks to Topic Modeling where instead of manually going through numerous docume
 - A topic modeling algorithm can connect words with similar meanings and distinguish between uses of words with multiple meanings. 
 - A sentence or a document is made up of numerous topics and each topic is made up of numerous words.
 
-* **
+
+## Tech Stack
+$\rightarrow$ **Language:** Python
+$\rightarrow$ **Libraries:** `nltk`, `tqdm`, `numpy`, `joblib`, `pandas`, `scikit_learn`, `gensim`, `bokeh`, `t-SNE`, `pyLDAvis`
+<!-- ➔ Services: Flask, Docker, AWS, Gunicorn -->
+
 
 ## Dataset Summary
 The **ReAding Comprehension dataset from Examinations (RACE)** dataset is a machine reading comprehension dataset consisting of 27,933 passages and 97,867 questions from English exams, targeting Chinese students aged 12-18. RACE consists of two subsets, RACE-M and RACE-H, from middle school and high school exams, respectively. RACE-M has 28,293 questions and RACE-H has 69,574. Each question is associated with 4 candidate answers, one of which is correct. The data generation process of RACE differs from most machine reading comprehension datasets - instead of generating questions and answers by heuristics or crowd-sourcing, questions in RACE are specifically designed for testing human reading skills, and are created by domain experts.
@@ -50,13 +55,12 @@ The **ReAding Comprehension dataset from Examinations (RACE)** dataset is a mach
 - [paperswithcode.com](https://paperswithcode.com/dataset/race#:~:text=The%20ReAding%20Comprehension%20dataset%20from,Chinese%20students%20aged%2012%2D18.)
 
 
-* **
+
 
 ## Objective
 To extract or identify a dominant topic from each document and perform topic modeling.
 
 
-* **
 
 ## Tools and Libraries
 We will be using Python as a tool to perform all kinds of operations.
@@ -69,7 +73,7 @@ Main Libraries used are:
 - `nltk` for text cleaning and preprocessing
 - `TSNE` and `pyLDAvis` for visualization of topics
 
-* **
+
 
 ## Approach
 - Topic EDA
@@ -91,7 +95,6 @@ Main Libraries used are:
     - Predicting a set of topics and the dominant topic for each documents
 
 
-* **
 
 ## Code Overview
 
@@ -114,7 +117,7 @@ Main Libraries used are:
 7. For unseen documents, topics were predicted using the above three algorithms.
 
 
-* **
+
 
 ## Folder Structure
 ```
@@ -153,7 +156,7 @@ pipeline
 ```
 
 
-* **
+
 
 ## Project Takeaways
 - Understanding the problem statement
@@ -173,7 +176,7 @@ pipeline
 - Training and predicting the documents using LDA and NMF in a modular code using python script.
 
 
-* **
+
 
 ## Replicate 
 ### 1. Create a new environment
