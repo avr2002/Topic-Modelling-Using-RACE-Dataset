@@ -51,7 +51,7 @@ lsa_model, lsa_top = modeling(vectorized_data=tfidf_vectorized_text_train,
                               model_save_path=model_save_path)
 
 lsa_document_topic_df = document_topic(model_output=lsa_top,
-                                       n_topics=lsa_model.get_params()['n_components'],
+                                       # n_topics=lsa_model.get_params()['n_components'],
                                        data=train_documents,
                                        model_name='lsa',
                                        data_type='train')
@@ -59,8 +59,7 @@ lsa_document_topic_df = document_topic(model_output=lsa_top,
 lsa_topic_keywords_df = show_topic_keywords(vectorizer=tfidf_vect,
                                             model=lsa_model, 
                                             top_n_words=15,
-                                            model_name='lsa',
-                                            data_type='train')
+                                            model_name='lsa')
 
 
 ### Test-Predictions
@@ -81,7 +80,7 @@ lda_model, lda_output = modeling(vectorized_data=count_vectorized_text_train,
 
 
 lda_document_topic_df = document_topic(model_output=lda_output,
-                                       n_topics=lda_model.get_params()['n_components'],
+                                       # n_topics=lda_model.get_params()['n_components'],
                                        data=train_documents,
                                        model_name='lda',
                                        data_type='train')
@@ -89,8 +88,7 @@ lda_document_topic_df = document_topic(model_output=lda_output,
 lda_topic_keywords_df = show_topic_keywords(vectorizer=count_vect,
                                             model=lda_model, 
                                             top_n_words=15,
-                                            model_name='lda',
-                                            data_type='train')
+                                            model_name='lda')
 
 
 ### Test-Predictions
@@ -112,7 +110,7 @@ nmf_model, nmf_output = modeling(vectorized_data=tfidf_vectorized_text_train,
 
 
 nmf_document_topic_df = document_topic(model_output=nmf_output,
-                                       n_topics=nmf_model.get_params()['n_components'],
+                                       # n_topics=nmf_model.get_params()['n_components'],
                                        data=train_documents,
                                        model_name='nmf',
                                        data_type='train')
@@ -120,8 +118,7 @@ nmf_document_topic_df = document_topic(model_output=nmf_output,
 nmf_topic_keywords_df = show_topic_keywords(vectorizer=count_vect,
                                             model=nmf_model, 
                                             top_n_words=15,
-                                            model_name='nmf',
-                                            data_type='train')
+                                            model_name='nmf',)
 
 ### Test-Predictions
 nmf_document_topic_test_df, nmf_topic_keyword_test_df = predict_topics_on_test_data(model=nmf_model,

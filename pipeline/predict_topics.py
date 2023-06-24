@@ -22,7 +22,7 @@ def predict_topics_on_test_data(model, vectorizer, test_data, vectorized_test_da
         model_output = model.transform(vectorized_test_data)
 
         test_document_topic_df = document_topic(model_output=model_output,
-                                                n_topics=model.get_params()['n_components'],
+                                                # n_topics=model.get_params()['n_components'],
                                                 data=test_data,
                                                 model_name=model_name,
                                                 data_type='test')
@@ -30,8 +30,7 @@ def predict_topics_on_test_data(model, vectorizer, test_data, vectorized_test_da
         test_topic_keyword_df = show_topic_keywords(vectorizer=vectorizer,
                                                     model=model, 
                                                     top_n_words=15,
-                                                    model_name=model_name,
-                                                    data_type='test')
+                                                    model_name=model_name,)
         
         return test_document_topic_df, test_topic_keyword_df
     except Exception as e:
