@@ -4,7 +4,7 @@ from pipeline.predict_on_single_document import predict_topics_on_a_single_docum
 
 
 def start():
-    text = "Run Pipeline: Press 0\nPredict on a Text Document: Press 1\nEnter your Value: "
+    text = "\nRun Pipeline: Press 0\nPredict on a Text Document: Press 1\nEnter your Value: "
     user_input = int(input(text))
     if user_input==0:
         print("\nPipeline Started!\n")

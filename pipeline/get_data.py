@@ -32,7 +32,7 @@ def download_race_data(download_url=data_config['dataset_download_url'])->str:
         os.makedirs(tgz_download_dir, exist_ok=True)
 
         if os.path.isfile(tgz_file_path):
-            print("\nFile is already Downloaded!")
+            print("\nFiles are already Downloaded!")
         else:
             print(f"\nDownloading file from [{download_url}] into: [{tgz_file_path}]")
             urllib.request.urlretrieve(url=download_url, filename=tgz_file_path)
