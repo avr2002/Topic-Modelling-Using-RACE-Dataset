@@ -1,0 +1,16 @@
+# List of all required files for prediction
+files:
+  # DATA
+  - ./input/ingested_data/cleaned_train_documents.csv
+  - ./input/ingested_data/cleaned_test_documents.csv
+  # SAVED VECTORIZERS
+  - ./output/saved_vectorizers/count_vectorizer.pkl
+  - ./output/saved_vectorizers/tfidf_vectorizer.pkl
+  # SAVED MODELS
+  - ./output/saved_models/lda_model.pkl
+  - ./output/saved_models/lsa_model.pkl
+  - ./output/saved_models/nmf_model.pkl
+  # MODEL OUTPUTS
+  - ./output/model_outputs/lda_outputs/topic_keywords_lda.csv
+  - ./output/model_outputs/lsa_outputs/topic_keywords_lsa.csv
+  - ./output/model_outputs/nmf_outputs/topic_keywords_nmf.csv

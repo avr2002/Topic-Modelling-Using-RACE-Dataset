@@ -1,23 +1,23 @@
-,Word 0,Word 1,Word 2,Word 3,Word 4,Word 5,Word 6,Word 7,Word 8,Word 9,Word 10,Word 11,Word 12,Word 13,Word 14
-Topic 0,friend,people,make,thing,life,feel,good,time,want,think,know,like,person,get,way
-Topic 1,student,school,teacher,class,high school,college,education,high,grade,university,classroom,school student,test,middle school,study
-Topic 2,mother,said,would,father,day,could,boy,went,asked,dad,told,one,got,back,came
-Topic 3,child,parent,kid,family,school,adult,age,young,mother,home,help,old,learn,money,tv
-Topic 4,english,language,word,speak,learn,learning,speaking,english language,foreign,speaker,dictionary,teacher,learn english,american,foreign language
-Topic 5,city,world,museum,year,people,london,new,place,park,country,hotel,visit,art,york,new york
-Topic 6,food,eat,eating,meal,vegetable,healthy,meat,fruit,restaurant,fat,drink,breakfast,diet,people,like
-Topic 7,study,researcher,brain,health,people,said,university,research,percent,disease,found,say,scientist,cancer,risk
-Topic 8,earth,plant,space,tree,planet,air,scientist,moon,sun,light,energy,world,gas,astronaut,mar
-Topic 9,car,driver,road,driving,traffic,bus,drive,accident,vehicle,bike,train,police,stop,taxi,street
-Topic 10,book,reading,read,story,library,reader,writer,writing,novel,write,word,page,author,newspaper,read book
-Topic 11,dog,pet,cat,owner,house,home,tail,animal,jack,human,walk,police,smell,wolf,bus
-Topic 12,sleep,night,hour,bed,day,body,time,sleeping,get,morning,exercise,clock,asleep,light,go
-Topic 13,phone,computer,internet,mobile,online,company,mobile phone,use,technology,information,cell phone,user,cell,mail,call
-Topic 14,woman,men,job,men woman,work,old woman,girl,female,male,husband,young woman,young,age,career,percent
-Topic 15,music,song,singer,musical,singing,play,piano,band,musician,concert,listening,rock,sound,like,pop
-Topic 16,mr,green,smith,mr green,mr smith,brown,black,mr brown,white,name,mr black,mr white,house,go,say
-Topic 17,chinese,china,beijing,said,country,chinese people,year,people,culture,shanghai,province,government,yuan,american,li
-Topic 18,man,old man,old,young man,young,said,money,asked,man said,boy,went,came,sir,one,looked
-Topic 19,game,sport,play,player,team,basketball,football,playing,ball,like,soccer,tennis,tv,boy,kid
-Topic 20,water,fish,sea,river,lake,drink,ocean,drinking,boat,clean,drinking water,air,swim,beach,use
-Topic 21,animal,bird,elephant,zoo,specie,human,cat,wild,tiger,bear,pet,fish,lion,monkey,tree
+,Word 0,Word 1,Word 2,Word 3,Word 4,Word 5,Word 6,Word 7,Word 8,Word 9,Word 10,Word 11,Word 12,Word 13,Word 14,Word 15,Word 16,Word 17,Word 18,Word 19,Word 20,Word 21,Word 22,Word 23,Word 24,Word 25,Word 26,Word 27,Word 28,Word 29
+Topic 0,friend,people,make,thing,life,feel,good,time,want,think,know,like,person,get,way,say,something,help,others,need,someone,may,try,talk,always,work,find,really,important,one
+Topic 1,student,school,teacher,class,high school,college,education,high,grade,university,classroom,school student,test,middle school,study,homework,exam,course,math,year,middle,learning,teaching,subject,program,graduate,go,job,work,teach
+Topic 2,mother,said,would,father,day,could,boy,went,asked,dad,told,one,got,back,came,year,little,girl,never,looked,home,son,thought,knew,mom,saw,house,took,wanted,love
+Topic 3,child,parent,kid,family,school,adult,age,young,mother,home,help,old,learn,money,tv,baby,help child,year old,education,toy,year,teenager,father,many,care,show,teach,young child,daughter,time
+Topic 4,english,language,word,speak,learn,learning,speaking,english language,foreign,speaker,dictionary,teacher,learn english,american,foreign language,use,british,grammar,understand,speak english,spoken,name,french,english teacher,native,class,culture,vocabulary,chinese,country
+Topic 5,city,world,museum,year,people,london,new,place,park,country,hotel,visit,art,york,new york,many,travel,famous,building,day,tour,state,island,visitor,street,american,area,th,one,festival
+Topic 6,food,eat,eating,meal,vegetable,healthy,meat,fruit,restaurant,fat,drink,breakfast,diet,people,like,milk,dinner,fast food,weight,day,fish,lunch,fast,dish,fruit vegetable,calorie,good,bread,buy,sugar
+Topic 7,study,researcher,brain,health,people,said,university,research,percent,disease,found,say,scientist,cancer,risk,may,doctor,effect,likely,dr,human,year,blood,group,body,test,patient,heart,le,age
+Topic 8,earth,plant,space,tree,planet,air,scientist,moon,sun,light,energy,world,gas,astronaut,mar,year,climate,temperature,wind,green,change,heat,pollution,carbon,color,could,would,earthquake,grow,weather
+Topic 9,car,driver,road,driving,traffic,bus,drive,accident,vehicle,bike,train,police,stop,taxi,street,get,city,drove,seat,go,air,bicycle,gas,parking,take,ride,way,light,pollution,passenger
+Topic 10,book,reading,read,story,library,reader,writer,writing,novel,write,word,page,author,newspaper,read book,written,wrote,published,reading book,paper,character,poem,magazine,literature,picture,first,bookstore,life,one,publisher
+Topic 11,dog,pet,cat,owner,house,home,tail,animal,jack,human,walk,police,smell,wolf,bus,friend,nose,old,mouth,training,front,help,trained,care,say,door,blind,toy,little,people
+Topic 12,sleep,night,hour,bed,day,body,time,sleeping,get,morning,exercise,clock,asleep,light,go,minute,brain,need,work,wake,room,early,nap,tired,enough,go bed,late,awake,every,rest
+Topic 13,phone,computer,internet,mobile,online,company,mobile phone,use,technology,information,cell phone,user,cell,mail,call,service,card,store,product,business,message,device,using,website,shopping,money,customer,web,buy,new
+Topic 14,woman,men,job,men woman,work,old woman,girl,female,male,husband,young woman,young,age,career,percent,american,year,marriage,married,college,many,likely,family,working,old,beauty,clothes,lady,sex,paid
+Topic 15,music,song,singer,musical,singing,play,piano,band,musician,concert,listening,rock,sound,like,pop,festival,sing,jazz,dance,popular,played,album,art,listen,film,movie,instrument,classical,famous,star
+Topic 16,mr,green,smith,mr green,mr smith,brown,black,mr brown,white,name,mr black,mr white,house,go,say,said,like,room,teacher,said mr,wife,tom,friend,jack,morning,mary,jones,evening,class,come
+Topic 17,chinese,china,beijing,said,country,chinese people,year,people,culture,shanghai,province,government,yuan,american,li,wang,million,world,zhang,japan,percent,liu,name,foreign,according,hong,traditional,show,prize,first
+Topic 18,man,old man,old,young man,young,said,money,asked,man said,boy,went,came,sir,one,looked,saw,took,give,shop,doctor,walked,tree,hand,answered,year old,shoe,told,dollar,ticket,bag
+Topic 19,game,sport,play,player,team,basketball,football,playing,ball,like,soccer,tennis,tv,boy,kid,computer,baseball,watch,olympic,played,school,match,club,win,good,olympics,athlete,computer game,girl,watching
+Topic 20,water,fish,sea,river,lake,drink,ocean,drinking,boat,clean,drinking water,air,swim,beach,use,rain,bottle,swimming,cold,island,fishing,tap,salt,hot,body,ice,fresh,pollution,ship,waste
+Topic 21,animal,bird,elephant,zoo,specie,human,cat,wild,tiger,bear,pet,fish,lion,monkey,tree,park,forest,wildlife,live,baby,scientist,plant,many,kind,cage,horse,habitat,whale,panda,pig

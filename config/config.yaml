@@ -7,9 +7,9 @@ data_config:
   cleaned_test_data_name: cleaned_test_documents.csv
   cleaned_train_data_name: cleaned_train_documents.csv
 
-  
 
 data_transformation_config:
+  vectorizer_save_path: ./output/saved_vectorizers
   tfidf_vect_params:
     min_df: 3
     max_df: 0.85
@@ -22,6 +22,8 @@ data_transformation_config:
     stop_words: english
     lowercase: True
 
+
+top_n_keywords_in_a_topic: 30
 
 lsa_params:
   n_components: 10 
@@ -48,6 +50,7 @@ nmf_params:
 
 model_save_path: ./output/saved_models
 model_output_save_path: ./output/model_outputs
+vectorizers_save_path: ./output/saved_vectorizers
 
 model_names:
   lsa: lsa_model.pkl

@@ -37,9 +37,6 @@ def train_test_split(df:pd.DataFrame)->tuple:
     return train_documents, test_documents
 
 
-stop_word = stopwords.words('english')
-le = WordNetLemmatizer()
-
 def text_preprocessing(text:str) -> str:
     """
     Returns cleaned text in string and list format.
@@ -48,6 +45,9 @@ def text_preprocessing(text:str) -> str:
     try:
         if pd.isnull(text):
             return text
+        
+        stop_word = stopwords.words('english')
+        le = WordNetLemmatizer()
         
         # lower-case everything
         text = text.lower()

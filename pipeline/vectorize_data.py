@@ -1,4 +1,6 @@
+import os
 import yaml
+import joblib
 import logging
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
@@ -13,6 +15,7 @@ CONFIG_PATH = "./config/config.yaml"
 with open(CONFIG_PATH, "r") as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
     data_trans_config = config['data_transformation_config']
+    vectorizer_save_path = data_trans_config['vectorizer_save_path']
     tfidf_params = data_trans_config['tfidf_vect_params']
     count_params = data_trans_config['count_vect_params']
 
@@ -40,7 +43,14 @@ def vectorize_text_data(data:pd.DataFrame, column:str, vectorizer_type:str)->tup
             tfidf_vect = TfidfVectorizer(**tfidf_params, preprocessor=" ".join)
             vectorized_text = tfidf_vect.fit_transform(tokenized_data)
 
-            print("Text Vectorization Successful using TfidfVectorizer\n")
+            print("Text Vectorization Successful using TfidfVectorizer")
+
+            # Saving the vectorizer for future use
+            os.makedirs(vectorizer_save_path, exist_ok=True)
+            tfidf_save_path = os.path.join(vectorizer_save_path, "tfidf_vectorizer.pkl")
+            joblib.dump(tfidf_vect, tfidf_save_path)
+
+            print(f"TfidfVectorizer saved at [{tfidf_save_path}]\n")
             return (tfidf_vect, vectorized_text)
         elif vectorizer_type.lower() == "count":
             # count_vect = CountVectorizer(analyzer="word",
@@ -50,7 +60,14 @@ def vectorize_text_data(data:pd.DataFrame, column:str, vectorizer_type:str)->tup
             count_vect = CountVectorizer(**count_params)
             vectorized_txt = count_vect.fit_transform(data[column])
 
-            print("Text Vectorization Successful using CountVectorizer\n")
+            print("Text Vectorization Successful using CountVectorizer")
+
+            # Saving the vectorizer for future use
+            os.makedirs(vectorizer_save_path, exist_ok=True)
+            count_vect_save_path = os.path.join(vectorizer_save_path, "count_vectorizer.pkl")
+            joblib.dump(count_vect, count_vect_save_path)
+
+            print(f"CountVectorizer saved at [{count_vect_save_path}]\n")
             return (count_vect, vectorized_txt)
         else:
             raise Exception(f"\nWrong Vectorizer Type Passed: [{vectorizer_type}].\nAllowed Vectorized Type: ['tfidf', 'count']")
