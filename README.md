@@ -49,16 +49,9 @@ The **ReAding Comprehension dataset from Examinations (RACE)** dataset is a mach
     }
     ```
 
-### Data Sources
-- [Dataset Link](https://www.cs.cmu.edu/~glai1/data/race/)
-- [arxiv.org](https://arxiv.org/abs/1704.04683)
-- [paperswithcode.com](https://paperswithcode.com/dataset/race#:~:text=The%20ReAding%20Comprehension%20dataset%20from,Chinese%20students%20aged%2012%2D18.)
-
-
-
 
 ## Objective
-To extract or identify a dominant topic from each document and perform topic modeling.
+**To extract or identify a dominant topic from each document and perform topic modeling.**
 
 
 
@@ -145,10 +138,13 @@ output
         |__lsa_outputs
         |__nmf_outputs
     |__saved_models
+    |__saved_vectorizers
 pipeline
     |__data_preprocessing.py
     |__get_data.py
+    |__predict_on_single_document.py
     |__predict_topics.py
+    |__run_pipeline.py
     |__show_topics.py
     |__topic_modeling.py
     |__utils.py
@@ -191,4 +187,11 @@ pipeline
 
 ### 3. Code Execution
 
-   - Run `python engine.py` to train the models
+   - Run `python engine.py` to train the models and predict on text documents
+
+
+
+## Data Sources
+- [Dataset Link](https://www.cs.cmu.edu/~glai1/data/race/)
+- [arxiv.org](https://arxiv.org/abs/1704.04683)
+- [paperswithcode.com](https://paperswithcode.com/dataset/race#:~:text=The%20ReAding%20Comprehension%20dataset%20from,Chinese%20students%20aged%2012%2D18.)
