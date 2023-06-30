@@ -24,31 +24,6 @@ The **ReAding Comprehension dataset from Examinations (RACE)** dataset is a mach
 
 >**From the following data we extract `article` field from each text file and collectively keep under one csv file for our topic modeling experiments. Complete data is split 90% in the training and the rest 10% to get an idea how to predict a topic on unseen documents.**
 
-### Data Fields
-- Data Structure:
-    ```
-    Each passage is a JSON file. The JSON file contains following fields:
-
-    article: A string, which is the passage.
-    questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _.
-    options: A list of the options list. Each options list contains 4 strings, which are the candidate option.
-    answers: A list contains the golden label of each query.
-    id: Each passage has a unique id in this dataset.
-    ```
-
-- Example Data
-    ```
-    This example was too long and was cropped:
-
-    {
-        "answer": "A",
-        "article": "\"Schoolgirls have been wearing such short skirts at Paget High School in Branston that they've been ordered to wear trousers ins...",
-        "example_id": "high132.txt",
-        "options": ["short skirts give people the impression of sexualisation", "short skirts are too expensive for parents to afford", "the headmaster doesn't like girls wearing short skirts", "the girls wearing short skirts will be at the risk of being laughed at"],
-        "question": "The girls at Paget High School are not allowed to wear skirts in that    _  ."
-    }
-    ```
-
 
 ## Objective
 **To extract or identify a dominant topic from each document and perform topic modeling.**
@@ -116,6 +91,7 @@ Main Libraries used are:
 ```
 config
     |__config.yaml
+    |__check.yaml
 input
     |__ingested_data
         |__cleaned_test_documents.csv
@@ -172,8 +148,6 @@ pipeline
 - Training and predicting the documents using LDA and NMF in a modular code using python script.
 
 
-
-
 ## Replicate 
 ### 1. Create a new environment
 
@@ -190,8 +164,34 @@ pipeline
    - Run `python engine.py` to train the models and predict on text documents
 
 
+## More About RACE Dataset
 
-## Data Sources
+### Data Fields
+- Data Structure:
+    ```
+    Each passage is a JSON file. The JSON file contains following fields:
+
+    article: A string, which is the passage.
+    questions: A string list. Each string is a query. We have two types of questions. First one is an interrogative sentence. Another one has a placeholder, which is represented by _.
+    options: A list of the options list. Each options list contains 4 strings, which are the candidate option.
+    answers: A list contains the golden label of each query.
+    id: Each passage has a unique id in this dataset.
+    ```
+
+- Example Data
+    ```
+    This example was too long and was cropped:
+
+    {
+        "answer": "A",
+        "article": "\"Schoolgirls have been wearing such short skirts at Paget High School in Branston that they've been ordered to wear trousers ins...",
+        "example_id": "high132.txt",
+        "options": ["short skirts give people the impression of sexualisation", "short skirts are too expensive for parents to afford", "the headmaster doesn't like girls wearing short skirts", "the girls wearing short skirts will be at the risk of being laughed at"],
+        "question": "The girls at Paget High School are not allowed to wear skirts in that    _  ."
+    }
+    ```
+
+### Data Sources
 - [Dataset Link](https://www.cs.cmu.edu/~glai1/data/race/)
 - [arxiv.org](https://arxiv.org/abs/1704.04683)
 - [paperswithcode.com](https://paperswithcode.com/dataset/race#:~:text=The%20ReAding%20Comprehension%20dataset%20from,Chinese%20students%20aged%2012%2D18.)
