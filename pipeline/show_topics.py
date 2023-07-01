@@ -1,4 +1,5 @@
 import os
+import sys
 import yaml
 import logging
 import numpy as np
@@ -16,7 +17,8 @@ with open(CONFIG_PATH, "r") as f:
 
 os.makedirs(model_output_save_path, exist_ok=True)
 
-def document_topic(model_output, data:pd.DataFrame, data_type:str, model_name:str):
+def document_topic(model_output, data:pd.DataFrame, 
+                   data_type:str, model_name:str, topic_keywords_df:pd.DataFrame):
     '''
     Returns a dataframe for each document having topic weightages
     and the dominant topic for each document.
@@ -35,26 +37,24 @@ def document_topic(model_output, data:pd.DataFrame, data_type:str, model_name:st
         model_output_path = os.path.join(model_output_save_path, model_output_folder_names[model_name])
         os.makedirs(model_output_path, exist_ok=True)
         
-        # file_name = data_type + "_document_topic_weights_" + model_name + ".csv"
         file_name = data_type + "_document_topic_" + model_name + ".csv"
         file_save_path = os.path.join(model_output_path, file_name)
-
-        # column names
-        # topicnames = ["Topic " + str(i) for i in range(n_topics)]
-        
-        # index names
-        # docnames = ["Doc " + str(i) for i in range(len(data))]
         
         # Make the pandas dataframe
-        # df_document_topic = pd.DataFrame(np.round(model_output, 2), columns=topicnames, index=docnames)
         df_document_topic = pd.DataFrame()
         
         # Get dominant topic for each document
-        # dominant_topic = np.argmax(df_document_topic.values, axis=1)
-        dominant_topic = np.argmax(np.round(model_output, 2), axis=1)
+        dominant_topic = np.argmax(model_output, axis=1)
 
         df_document_topic['Document'] = data.document.values
         df_document_topic["Dominant_Topic"] = dominant_topic
+
+        # Get the keywords for dominant topic
+        topic_keywords = []
+        for topic_num in dominant_topic:
+            topic_keywords.append(list(topic_keywords_df.iloc[topic_num, 1:]))
+
+        df_document_topic['Topic_Keywords'] = topic_keywords
         
         df_document_topic.to_csv(file_save_path, index=False)
 
@@ -111,3 +111,31 @@ def show_topic_keywords(vectorizer, model, top_n_words:int, model_name:str):
         return topic_keywords_df
     except Exception as e:
         logger.error(f"\nError while creating the topic-keywords frame for the model: [{model_name}]\n {e}", exc_info=True)
+
+
+
+def get_model_predictions(vectorizer, model, model_name:str,
+                          model_output, data:pd.DataFrame, 
+                          data_type:str, top_n_words:int=30):
+    """
+    Returns Topic Predictions DataFrame for the passed data and Topic KeyWords DataFrame.
+        (document_topic_df, topic_keywords_df)
+    :Args:
+        vectorizer: Vectorizer Used on text Data: TfidfVectorizer, CountVectorizer
+        model: Model Object 
+        model_name: Model Name ['lsa', 'lda', 'nmf'] 
+        model_output: transformed model output on data using model.transform() or model.fit_transform()
+        data: pd.DataFrame
+        data_type:str: type of data: 'train' or 'test'
+        top_n_words:int: Top n keywords you want in the topic (default = 30)
+    """
+    model_name = model_name.lower()
+    topic_keywords_df = show_topic_keywords(vectorizer=vectorizer, model=model, 
+                                            top_n_words=top_n_words, model_name=model_name)
+    
+    document_topic_df = document_topic(model_output=model_output, data=data, 
+                                       model_name=model_name, data_type=data_type, 
+                                       topic_keywords_df=topic_keywords_df)
+    
+    return document_topic_df, topic_keywords_df
+    

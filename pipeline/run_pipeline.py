@@ -1,10 +1,11 @@
 import os
+import sys
 import yaml
 from pipeline.get_data import get_and_read_data
 from pipeline.data_preprocessing import get_cleaned_train_test_data
 from pipeline.vectorize_data import vectorize_text_data
 from pipeline.topic_modeling import modeling
-from pipeline.show_topics import document_topic, show_topic_keywords
+from pipeline.show_topics import document_topic, show_topic_keywords, get_model_predictions
 from pipeline.predict_topics import predict_topics_on_test_data
 
 
@@ -51,16 +52,11 @@ def run():
                                 model_name="lsa",
                                 model_save_path=model_save_path)
 
-    lsa_document_topic_df = document_topic(model_output=lsa_top,
-                                        # n_topics=lsa_model.get_params()['n_components'],
-                                        data=train_documents,
-                                        model_name='lsa',
-                                        data_type='train')
-
-    lsa_topic_keywords_df = show_topic_keywords(vectorizer=tfidf_vect,
-                                                model=lsa_model, 
-                                                top_n_words=top_n_keywords_in_a_topic,
-                                                model_name='lsa')
+    
+    lsa_document_topic_df, lsa_topic_keywords_df = get_model_predictions(vectorizer=tfidf_vect, model=lsa_model, 
+                                                                         model_name='lsa', model_output=lsa_top, 
+                                                                         data = train_documents, data_type='train', 
+                                                                         top_n_words=top_n_keywords_in_a_topic)
 
 
     ### Test-Predictions
@@ -73,23 +69,18 @@ def run():
     print("\n------------------------LSA Ends--------------------------\n")
 
 
+
     ## LDA
     print("------------------------LDA Starts------------------------\n")
     lda_model, lda_output = modeling(vectorized_data=count_vectorized_text_train,
                                     model_name="lda",
                                     model_save_path=model_save_path)
+    
 
-
-    lda_document_topic_df = document_topic(model_output=lda_output,
-                                        # n_topics=lda_model.get_params()['n_components'],
-                                        data=train_documents,
-                                        model_name='lda',
-                                        data_type='train')
-
-    lda_topic_keywords_df = show_topic_keywords(vectorizer=count_vect,
-                                                model=lda_model, 
-                                                top_n_words=top_n_keywords_in_a_topic,
-                                                model_name='lda')
+    lda_document_topic_df, lda_topic_keywords_df = get_model_predictions(vectorizer=count_vect, model=lda_model, 
+                                                                         model_name='lda', model_output=lda_output, 
+                                                                         data = train_documents, data_type='train', 
+                                                                         top_n_words=top_n_keywords_in_a_topic)
 
 
     ### Test-Predictions
@@ -108,18 +99,11 @@ def run():
     nmf_model, nmf_output = modeling(vectorized_data=tfidf_vectorized_text_train,
                                     model_name="nmf",
                                     model_save_path=model_save_path)
-
-
-    nmf_document_topic_df = document_topic(model_output=nmf_output,
-                                        # n_topics=nmf_model.get_params()['n_components'],
-                                        data=train_documents,
-                                        model_name='nmf',
-                                        data_type='train')
-
-    nmf_topic_keywords_df = show_topic_keywords(vectorizer=count_vect,
-                                                model=nmf_model, 
-                                                top_n_words=top_n_keywords_in_a_topic,
-                                                model_name='nmf',)
+    
+    nmf_document_topic_df, nmf_topic_keywords_df = get_model_predictions(vectorizer=tfidf_vect, model=nmf_model, 
+                                                                         model_name='nmf', model_output=nmf_output, 
+                                                                         data = train_documents, data_type='train', 
+                                                                         top_n_words=top_n_keywords_in_a_topic)
 
     ### Test-Predictions
     nmf_document_topic_test_df, nmf_topic_keyword_test_df = predict_topics_on_test_data(model=nmf_model,

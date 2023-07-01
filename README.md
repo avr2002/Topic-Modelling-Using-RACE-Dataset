@@ -21,8 +21,12 @@ Thanks to Topic Modeling where instead of manually going through numerous docume
 
 ## Output
 <div align='center'>
+    <img src='output/images/sample_output.png', title='Sample Output-1'/>
+    <img src='output/images/sample_output_1.png', title='Sample Output-2'/>
+    <img src='output/images/sample_output_2.png', title='Sample Output-3'/>
     <img src='output/images/pipeline_run.gif' title='Pipeline Run'/>
-    <img src='output/images/prediction1.png' title='Model Prediction'/>
+    <img src='output/images/prediction.png' title='Model Prediction-1'/>
+    <img src='output/images/prediction1.png' title='Model Prediction-2'/>
 </div>
 
 

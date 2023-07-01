@@ -1,6 +1,6 @@
 import yaml
 import logging
-from pipeline.show_topics import document_topic, show_topic_keywords
+from pipeline.show_topics import get_model_predictions
 
 
 logger = logging.getLogger(__name__)
@@ -28,17 +28,11 @@ def predict_topics_on_test_data(model, vectorizer, test_data, vectorized_test_da
         print(f"\n{model_name.upper()} Model Predictions on Test Data...")
         # extracting topics from test data
         model_output = model.transform(vectorized_test_data)
-
-        test_document_topic_df = document_topic(model_output=model_output,
-                                                # n_topics=model.get_params()['n_components'],
-                                                data=test_data,
-                                                model_name=model_name,
-                                                data_type='test')
         
-        test_topic_keyword_df = show_topic_keywords(vectorizer=vectorizer,
-                                                    model=model, 
-                                                    top_n_words=top_n_keywords_in_a_topic,
-                                                    model_name=model_name,)
+        test_document_topic_df, test_topic_keyword_df = get_model_predictions(vectorizer=vectorizer, model=model, 
+                                                                            model_name=model_name, model_output=model_output, 
+                                                                            data = test_data, data_type='test', 
+                                                                            top_n_words=top_n_keywords_in_a_topic)
         
         return test_document_topic_df, test_topic_keyword_df
     except Exception as e:
