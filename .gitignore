@@ -10,6 +10,9 @@ __pycache__/
 # input/raw_data/RACE/
 # input/tgz_data/RACE.tar.gz
 
+# BERTopic & Top2Vec
+output/saved_models/BERTopic_and_Top2Vec_Models/
+
 # Distribution / packaging
 .Python
 build/
