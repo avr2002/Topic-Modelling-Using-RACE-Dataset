@@ -15,7 +15,7 @@ Thanks to Topic Modeling where instead of manually going through numerous docume
 
 ## Tech Stack
 - $\rightarrow$ **Language:** Python
-- $\rightarrow$ **Libraries:** `nltk`, `tqdm`, `numpy`, `joblib`, `pandas`, `scikit_learn`, `gensim`, `bokeh`, `t-SNE`, `pyLDAvis`
+- $\rightarrow$ **Libraries:** `nltk`, `gensim`, `BERTopic`, `Top2Vec`, `tqdm`, `numpy`, `joblib`, `pandas`, `scikit_learn`, `bokeh`, `t-SNE`, `pyLDAvis`
 <!-- ➔ Services: Flask, Docker, AWS, Gunicorn -->
 
 
